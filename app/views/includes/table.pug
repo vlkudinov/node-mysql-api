@@ -1,0 +1,40 @@
+.table-responsive
+    table.table.table-striped.table-bordered.text-center.align-middle.mb-0(style='width: 100%')
+        thead.thead-light
+            tr
+                th Id
+                th Flag
+                th Name
+                th Capital
+                th Area
+                th Population
+                th Language
+                th GDP (PPP)
+                th Gini
+                th HDI
+                th Edit/Delete
+        tbody
+            each country in countries
+                tr
+                    td=country.id
+                    td.flag
+                        img(src=country.link alt='flag')
+                    td=country.name
+                    td=country.capital
+                    td.area=country.area
+                    td=new Intl.NumberFormat('en-US').format(country.population)
+                    td.language=country.language
+                    td=country.gdp
+                    td=country.gini
+                    td=country.hdi
+                    td.operations
+                        .btn-group.dropleft
+                            button.btn.btn-secondary.dropdown-toggle( type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                | Options
+                            .dropdown-menu.text-center
+                                a.dropdown-item.text-center( href="#")
+                                    form.form-inline.d-inline-block( action=`/countries/${country.id}`)
+                                        button.btn.btn-link.btn-sm(type="submit") Edit
+                                a.dropdown-item( href="#")
+                                    form.form-inline.d-inline-block(action=`/countries/${country.id}?_method=DELETE` method='post')
+                                        button.btn.btn-link.btn-sm.text-danger( type="submit") Delete

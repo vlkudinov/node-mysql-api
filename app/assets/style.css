@@ -1,0 +1,49 @@
+html {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+main {
+
+    margin: auto 0;
+}
+
+.form-signin {
+    width: 30%;
+    padding: 15px;
+    margin: auto;
+    max-width: 300px;
+}
+
+footer {
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+.area:after {
+    content: ' km2';
+}
+.table {
+    overflow-x: scroll;
+}
+.table td {
+    padding: 4px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.table td:not(.language) {
+   white-space: nowrap;
+
+}
+
+.flag img {
+    max-width: 80px;
+    max-height: 80px;
+}

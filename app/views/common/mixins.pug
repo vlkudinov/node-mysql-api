@@ -1,0 +1,18 @@
+mixin select(label, name, func,  values)
+    .input-group
+        .input-group-prepend
+            label.input-group-text=label
+        select.custom-select(name=name)
+            option(selected)=func
+            each value in values
+                option=value
+
+mixin input(type, label, name, placeholder, value)
+    .form-group.col-md-6
+        .input-group
+            .input-group-prepend
+                span.input-group-text=label
+            input.form-control(type=type name=name placeholder=placeholder value=value)
+
+
+

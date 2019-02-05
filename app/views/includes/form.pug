@@ -1,0 +1,38 @@
+-
+    function getValue(field) {return isEditForm ? country[field] : ''}
+    var action = isEditForm ? `/countries/${country.id}?_method=PATCH` : '/countries';
+    var title = isEditForm ? 'Edit country' : 'Add country';
+    var btnText = isEditForm ? 'Edit' : 'Add';
+
+form.mb-3( name='userForm' action=(action) method='post' enctype="multipart/form-data")
+    h4.mb-2.mt-2=title
+    input( type="hidden" name="id" value=getValue(country, "id"))
+    .form-row.mb-1
+        +input("text", "Name", "name", "Enter country name", getValue("name"))
+        +input("text", "Capital", "capital", "Enter capital city name", getValue("capital"))
+    .form-row.mb-1
+        +input("number", "Area", "area", "Enter area (e.g. 83879)", getValue("area"))
+        +input("text", "Population", "population", "Enter population (e.g. 46700000)", getValue("population"))
+    .form-row.mb-1
+        +input("text", "Language", "language", "Enter official language", getValue("language"))
+        +input("text", "GDP (PPP)", "gdp", "Enter GDP (e.g. $1.864 trillion)", getValue("gdp"))
+    .form-row.mb-1
+        +input("text", "Gini", "gini", "Enter Gini index", getValue("gini"))
+        +input("text", "HDI", "hdi", "Enter HDI index", getValue("hdi"))
+    .form-row.mb-1
+        .form-group.col-md-12.mb-0
+            .input-group
+                .input-group-prepend
+                    span.input-group-text#idfileInputAddon Upload
+                .custom-file
+                    input.custom-file-input( type="file" id="fileInput" name="image" accept="image/*")
+                    label.custom-file-label( for="fileInput" ) Choose file
+    .input-group.m-2
+        .form-check
+            input.form-check-input#defaultCheck1(type="checkbox" value="" required)
+            label.form-check-label(for="defaultCheck1") Check me out
+    .input-group
+        button.btn.btn-primary.mr-2( type="submit")=btnText
+            i.fa.fa-upload.ml-2( aria-hidden="true")
+        button.btn.btn-secondary(type="reset") Reset
+            i.fa.fa-eraser.ml-2(aria-hidden="true")

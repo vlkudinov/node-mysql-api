@@ -1,0 +1,6 @@
+nav.navbar.navbar-dark.bg-dark.shadow-sm
+    .container
+        a.navbar-brand(href="/countries") Home
+        form.form-inline.ml-auto(action='/logout?_method=DELETE' method='post')
+            button.btn.btn-link.btn-light.text-light.ml-0(type='submit') Sign out
+                i.fa.fa-sign-out.ml-2( aria-hidden="true")

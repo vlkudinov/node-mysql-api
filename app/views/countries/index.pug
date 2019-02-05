@@ -1,0 +1,13 @@
+extends ../layouts/app
+include ../common/mixins
+
+block content
+    include ../includes/navbar
+    main.py-5
+        .container
+            for message in flash
+                .alert.mt-3.mb-sm-2(class=`alert-${message.type}`)
+                    = message.message
+            include ../includes/form
+    include ../includes/table
+    include ../includes/footer

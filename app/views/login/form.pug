@@ -1,0 +1,20 @@
+extends ../layouts/app
+
+block content
+    form.form-signin(action='/login' method='post')
+        h3.text-center Sign in
+        for message in flash
+            .alert.mt-3.mb-sm-2(class=`alert-${message.type}`)
+                = message.message
+        form(action='/login' method='post')
+            .row.form-group
+                .col-sm
+                    input.form-control(name='username' placeholder='login' value='admin' required)
+            .row.form-group.mb-1
+                .col-sm
+                    input.form-control(name='password' placeholder='password' type='password' value='12345' required)
+            .form-check.mb-2
+                input.form-check-input.mt-sm-2#exampleCheck1( type="checkbox" checked required)
+                label.form-check-label( for="exampleCheck1") Check me out
+            button.btn.btn-primary.btn-block(type='submit') Enter
+                i.fa.fa-sign-in.ml-sm-2( aria-hidden="true")
