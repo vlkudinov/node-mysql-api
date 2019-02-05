@@ -24,8 +24,7 @@ DELETE api/countries/1
 ```
 ## Demo
 
-Running version of the app at: https://polar-springs-68478.herokuapp.com/countries
-
+Running version of the app at: https://node-mysql-restapi.herokuapp.com/
 
 ## .env
 Your .env file must be something like this
