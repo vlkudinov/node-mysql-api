@@ -28,7 +28,7 @@ Running version of the app at: https://node-mysql-restapi.herokuapp.com/
 
 login: admin
 password: 12345
-
+```
 ## .env
 Your .env file must be something like this
 ```
